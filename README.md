@@ -32,14 +32,14 @@ To show the help menu:
 hyperlisp -h
 ```
 
-To convert `index.hp` file into html and print it out:
+To convert `index.hls` file into html and print it out:
 ```
-hyperlisp -i index.hp
+hyperlisp -i index.hls
 ```
 
-To convert `index.hp` file into `index.html`:
+To convert `index.hls` file into `index.html`:
 ```
-hyperlisp -i index.hp -o index.html
+hyperlisp -i index.hls -o index.html
 ```
 
 ## Syntax
