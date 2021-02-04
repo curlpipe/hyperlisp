@@ -1,0 +1,27 @@
+(html lang="en"
+  (head 
+    (title Hyperlisp)
+  )
+  (body style="font-family: verdana;"
+    (h1 Hyperlisp!)
+    (hr)
+    (p This is an example of (b style="color: blue;" hyperlisp))
+    (h2 What the hell is hyperlisp?)
+    (ul
+      (li It's a markup language designed for the web)
+      (li It's written in Rust and can transpile very quickly)
+      (li It's inspired by Lisp, providing a nice way to write webpages)
+      (li It's free, open source and you can learn it pretty quickly)
+      (li It'll alert you to any errors in your markup, making it easier to debug)
+    )
+    (h2 How do I use it?)
+    (p 
+      You can head to my 
+      (a href="https://github.com/curlpipe/hyperlisp" Github repository)
+      where you'll find everything you need to get started
+    )
+    (p I hope that this tool makes you more productive :D)
+    (br)
+    (p - Curlpipe)
+  )
+)

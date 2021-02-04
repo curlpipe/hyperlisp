@@ -1,0 +1,29 @@
+// Root is the roots of the tree, contains all the tags
+root = { (WHITESPACE | comment | tag)* }
+
+// A tag is made up of an id, attributes and body
+tag = ${ "(" ~ id ~ (" " ~ attribute)* ~ (" "? ~ body)? ~ ")" }
+
+// An ID is a html element name, e.g. "h1" or "script"
+id = ${ (!(")" | "(" | " " | "!" | "\n" | "\t") ~ ANY)+ }
+
+// An attribute is where extra info is provided like styling and classes
+attribute = ${ name ~ "=" ~ "\"" ~ value ~ "\"" }
+
+// Name captures anythign that isn't a bracket, whitespace or an equals sign
+name = { (!("=" | "(" | ")") ~ ANY)* }
+
+// Value captures everything that isn't a quote
+value = { (!("\"") ~ ANY)* }
+
+// A body is made up of one or more comments, tags or text
+body = ${ (comment | tag | text)+ }
+
+// Text is made up of anything that isn't a bracket
+text = ${ (!(")" | "(") ~ ANY)+ }
+
+// Comments are ignored by the parser and don't make it to Rust
+comment = _{ "!(" ~ (!(")") ~ ANY)* ~ ")" }
+
+// Whitespace is made up of spaces, newlines and tabs, these are ignored
+WHITESPACE = _{ " " | "\n" | "\t" }
